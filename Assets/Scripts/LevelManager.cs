@@ -183,6 +183,7 @@ public class LevelManager : Singleton<LevelManager>
     {
         if (thisLevel != null)
         {
+            Time.timeScale = 1;
             SceneManager.LoadScene(thisLevel);
         }
     }
@@ -191,12 +192,14 @@ public class LevelManager : Singleton<LevelManager>
     {
         if(nextLevel != null)
         {
+            Time.timeScale = 1;
             SceneManager.LoadScene(nextLevel);
         }
     }
     
     public void ExitToMainMenu()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
     }
 

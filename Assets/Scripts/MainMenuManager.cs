@@ -5,13 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : Singleton<MainMenuManager>
 {
+
+    [SerializeField] private GameObject tutorialPanel;
+    [SerializeField] private GameObject otherPanel;
+
     public void QuitGame()
     {
         Application.Quit();
     }
 
-    public void StartGame()
+    public void ShowTutorial()
     {
-        SceneManager.LoadScene("Level1");
+        if (tutorialPanel != null)
+        {
+            tutorialPanel.SetActive(true);
+        }
+        if (otherPanel != null)
+        {
+            otherPanel.SetActive(false);
+        }
+    }
+
+    public void StartGame(string levelName)
+    {
+        SceneManager.LoadScene(levelName);
     }
 }

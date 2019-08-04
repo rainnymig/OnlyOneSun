@@ -2226,6 +2226,16 @@ PrefabInstance:
       propertyPath: failPanel
       value: 
       objectReference: {fileID: 73811905}
+    - target: {fileID: 5211805335829871872, guid: 1fb6438dbcbfef64e9ed9a03ff45006a,
+        type: 3}
+      propertyPath: nextLevel
+      value: Level3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5211805335829871872, guid: 1fb6438dbcbfef64e9ed9a03ff45006a,
+        type: 3}
+      propertyPath: thisLevel
+      value: Level2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fb6438dbcbfef64e9ed9a03ff45006a, type: 3}
 --- !u!1001 &5613657389779435365

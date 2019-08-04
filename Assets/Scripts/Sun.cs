@@ -6,7 +6,7 @@ using UnityEngine;
 public class Sun : MonoBehaviour
 {
     [SerializeField] private float heatLevelDrop = 0.5f;
-
+    
     private Rigidbody2D rb;
 
     private void Awake()
