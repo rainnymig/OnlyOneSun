@@ -7,6 +7,10 @@ TagManager:
   - Arrow
   - Ground
   - ReflexGround
+  - IceArrow
+  - Cloud
+  - IceCloud
+  - Sun
   layers:
   - Default
   - TransparentFX

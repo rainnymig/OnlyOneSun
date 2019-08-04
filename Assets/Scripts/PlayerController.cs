@@ -25,11 +25,17 @@ public class PlayerController : MonoBehaviour
         Vector2 dir = Input.mousePosition - Camera.main.WorldToScreenPoint(bowWrapper.transform.position);
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         bowWrapper.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        transform.rotation = Quaternion.identity;
     }
 
     private void FixedUpdate()
     {
         Vector2 targetVelocity = new Vector2(horizontalMove * Time.fixedDeltaTime * 10, rb.velocity.y);
         rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocity, movementSmoothing);
+    }
+
+    private void OnDestroy()
+    {
+        
     }
 }

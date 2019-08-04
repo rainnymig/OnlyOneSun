@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : Singleton<LevelManager>
 {
@@ -24,6 +25,7 @@ public class LevelManager : Singleton<LevelManager>
     [SerializeField] private int normalArrowCount;
     [SerializeField] private int iceArrowCount;
     [SerializeField] private string nextLevel;
+    [SerializeField] private string thisLevel;
     [Range(0, 1)][SerializeField] private float initialHeatLevel = 0.5f;
     [SerializeField] private float fullHeatTime = 30;
 
@@ -73,6 +75,7 @@ public class LevelManager : Singleton<LevelManager>
         heatMeter = Mathf.Clamp(heatTimer / fullHeatTime, 0, 1);
         if(heatMeter == 1)
         {
+            failText = "it is too late. the world burns.";
             onFailEvent.Invoke();
         }
     }
@@ -96,6 +99,13 @@ public class LevelManager : Singleton<LevelManager>
     public void KillSun(GameObject sun)
     {
         suns.Remove(sun);
+    }
+
+    public void PlayerDie()
+    {
+        levelState = LevelState.FAILED;
+        failText = "you died from falling.";
+        onFailEvent.Invoke();
     }
 
     public int getArrowCount(ArrowType type)
@@ -145,13 +155,14 @@ public class LevelManager : Singleton<LevelManager>
     {
         if (suns.Count > 1)
         {
-            if(normalArrowCount+iceArrowCount > 0)
+            if(normalArrowCount + iceArrowCount > 0)
             {
                 levelState = LevelState.RUNNING;
             }
             else
             {
                 levelState = LevelState.FAILED;
+                failText = "you run out of arrows.";
                 onFailEvent.Invoke();
             }
         }
@@ -163,13 +174,30 @@ public class LevelManager : Singleton<LevelManager>
         else
         {
             levelState = LevelState.FAILED;
+            failText = "the world falls into eternal darkness.";
             onFailEvent.Invoke();
         }
     }
 
-    private void loadNextLevel()
+    public void ReloadThisLevel()
     {
-        
+        if (thisLevel != null)
+        {
+            SceneManager.LoadScene(thisLevel);
+        }
+    }
+
+    public void LoadNextLevel()
+    {
+        if(nextLevel != null)
+        {
+            SceneManager.LoadScene(nextLevel);
+        }
+    }
+    
+    public void ExitToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
 

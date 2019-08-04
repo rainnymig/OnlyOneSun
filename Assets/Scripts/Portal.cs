@@ -13,7 +13,7 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (portalActive)
+        if (portalActive && !collision.CompareTag("Sun"))
         {
             SetPortalActive(false);
             otherPortal.SetPortalActive(false);

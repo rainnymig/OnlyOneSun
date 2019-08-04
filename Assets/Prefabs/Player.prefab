@@ -47,6 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrowPrefab: {fileID: 4776720732385975262, guid: c99fef5c919cbbd4a964caccd59f7929,
     type: 3}
+  iceArrowPrefab: {fileID: 6395704612199017275, guid: e399b3cdac4b77442ad814f8ce948a62,
+    type: 3}
   shootForce: 40
   initialArrowOffset: 0.1
   arrowSpriteRenderer: {fileID: 5613657389485702760}

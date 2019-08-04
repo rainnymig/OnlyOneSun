@@ -6,6 +6,7 @@ public class Shooter : MonoBehaviour
 {
 
     [SerializeField] private GameObject arrowPrefab;
+    [SerializeField] private GameObject iceArrowPrefab;
     [SerializeField] private float shootForce = 100;
     [SerializeField] private float initialArrowOffset = 0.1f;
     [SerializeField] private SpriteRenderer arrowSpriteRenderer;
@@ -27,13 +28,25 @@ public class Shooter : MonoBehaviour
         {
             ShootArrow();
         }
+        if(Input.GetButtonDown("SwitchArrow"))
+        {
+            switchArrow();
+        }
     }
 
     private void ShootArrow()
     {
         if(LevelManager.Instance.getArrowCount(arrowType) > 0)
         {
-            GameObject arrowInstance = Instantiate(arrowPrefab);
+            GameObject arrowInstance;
+            if(arrowType == LevelManager.ArrowType.normal)
+            {
+                arrowInstance = Instantiate(arrowPrefab);
+            }
+            else
+            {
+                arrowInstance = Instantiate(iceArrowPrefab);
+            }
 
             arrowInstance.transform.position = transform.position + transform.right * initialArrowOffset;
             arrowInstance.transform.rotation = transform.rotation;
@@ -50,11 +63,31 @@ public class Shooter : MonoBehaviour
     {
         if (LevelManager.Instance.getArrowCount(arrowType) > 0)
         {
-            arrowSpriteRenderer.sprite = normalArrowSprite;
+            if(arrowType == LevelManager.ArrowType.normal)
+            {
+                arrowSpriteRenderer.sprite = normalArrowSprite;
+            }
+            else
+            {
+                arrowSpriteRenderer.sprite = iceArrowSprite;
+            }
         }
         else
         {
             arrowSpriteRenderer.sprite = null;
         }
+    }
+
+    private void switchArrow()
+    {
+        if(arrowType == LevelManager.ArrowType.normal)
+        {
+            arrowType = LevelManager.ArrowType.ice;
+        }
+        else
+        {
+            arrowType = LevelManager.ArrowType.normal;
+        }
+        displayArrow();
     }
 }

@@ -16,7 +16,7 @@ public class Sun : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Arrow"))
+        if(collision.CompareTag("Arrow") || collision.CompareTag("IceCloud"))
         {
             rb.gravityScale = 1;
             LevelManager.Instance.KillSun(gameObject);
