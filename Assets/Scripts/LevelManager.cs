@@ -49,6 +49,8 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log(thisLevel);
+
         if(onWinEvent == null)
         {
             onWinEvent = new UnityEvent();

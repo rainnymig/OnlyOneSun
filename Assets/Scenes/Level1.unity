@@ -1671,6 +1671,26 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2285280469852309750, guid: fd7429e52779b0c45af0102d7477d7fe,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1551934460}
+    - target: {fileID: 2285280469852309750, guid: fd7429e52779b0c45af0102d7477d7fe,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadNextLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843627858788646691, guid: fd7429e52779b0c45af0102d7477d7fe,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1551934460}
+    - target: {fileID: 7843627858788646691, guid: fd7429e52779b0c45af0102d7477d7fe,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReloadThisLevel
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd7429e52779b0c45af0102d7477d7fe, type: 3}
 --- !u!114 &1946200850 stripped

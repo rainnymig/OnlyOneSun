@@ -2228,6 +2228,26 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2285280469852309750, guid: fd7429e52779b0c45af0102d7477d7fe,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5211805335582522889}
+    - target: {fileID: 2285280469852309750, guid: fd7429e52779b0c45af0102d7477d7fe,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadNextLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843627858788646691, guid: fd7429e52779b0c45af0102d7477d7fe,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5211805335582522889}
+    - target: {fileID: 7843627858788646691, guid: fd7429e52779b0c45af0102d7477d7fe,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReloadThisLevel
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd7429e52779b0c45af0102d7477d7fe, type: 3}
 --- !u!1001 &5211805335582522888
@@ -2379,6 +2399,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fb6438dbcbfef64e9ed9a03ff45006a, type: 3}
+--- !u!114 &5211805335582522889 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5211805335829871872, guid: 1fb6438dbcbfef64e9ed9a03ff45006a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5211805335582522888}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 700beac2af4e7be4fbb2b4c5ce4f5c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5613657389779435365
 PrefabInstance:
   m_ObjectHideFlags: 0
