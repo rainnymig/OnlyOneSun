@@ -49,6 +49,9 @@ MonoBehaviour:
     type: 3}
   shootForce: 40
   initialArrowOffset: 0.1
+  arrowSpriteRenderer: {fileID: 5613657389485702760}
+  normalArrowSprite: {fileID: 21300000, guid: 9d1e64fec2252fe48a9d7289c8c3c46a, type: 3}
+  iceArrowSprite: {fileID: 21300000, guid: db5153f7fefd42f4e9fff5f62a2284d6, type: 3}
 --- !u!1 &5613657388636373029
 GameObject:
   m_ObjectHideFlags: 0
@@ -78,7 +81,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 5613657388650264504}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5613657388636373031
 SpriteRenderer:
@@ -117,7 +120,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 9cae69f5555f07949bb1a36a409aa14a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -159,8 +162,8 @@ Transform:
   m_LocalPosition: {x: -1.403, y: -1.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5613657388636373028}
   - {fileID: 5613657389516819842}
+  - {fileID: 5613657388636373028}
   - {fileID: 5613657388619511706}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -416,7 +419,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 5613657388650264504}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5613657389516819853
 SpriteRenderer:

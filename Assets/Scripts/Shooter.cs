@@ -8,6 +8,17 @@ public class Shooter : MonoBehaviour
     [SerializeField] private GameObject arrowPrefab;
     [SerializeField] private float shootForce = 100;
     [SerializeField] private float initialArrowOffset = 0.1f;
+    [SerializeField] private SpriteRenderer arrowSpriteRenderer;
+    [SerializeField] private Sprite normalArrowSprite;
+    [SerializeField] private Sprite iceArrowSprite;
+
+
+    private LevelManager.ArrowType arrowType = LevelManager.ArrowType.normal;
+
+    private void Start()
+    {
+        displayArrow();
+    }
 
     // Update is called once per frame
     void Update()
@@ -20,10 +31,30 @@ public class Shooter : MonoBehaviour
 
     private void ShootArrow()
     {
-        GameObject arrowInstance = Instantiate(arrowPrefab);
-        arrowInstance.transform.position = transform.position + transform.right * initialArrowOffset;
-        arrowInstance.transform.rotation = transform.rotation;
-        Rigidbody2D arrowRb = arrowInstance.GetComponent<Rigidbody2D>();
-        arrowRb.AddForce(arrowInstance.transform.right * shootForce);
+        if(LevelManager.Instance.getArrowCount(arrowType) > 0)
+        {
+            GameObject arrowInstance = Instantiate(arrowPrefab);
+
+            arrowInstance.transform.position = transform.position + transform.right * initialArrowOffset;
+            arrowInstance.transform.rotation = transform.rotation;
+            Rigidbody2D arrowRb = arrowInstance.GetComponent<Rigidbody2D>();
+            arrowRb.AddForce(arrowInstance.transform.right * shootForce);
+
+            LevelManager.Instance.AddFlyingArrow(arrowType);
+
+            displayArrow();
+        }
+    }
+
+    private void displayArrow()
+    {
+        if (LevelManager.Instance.getArrowCount(arrowType) > 0)
+        {
+            arrowSpriteRenderer.sprite = normalArrowSprite;
+        }
+        else
+        {
+            arrowSpriteRenderer.sprite = null;
+        }
     }
 }

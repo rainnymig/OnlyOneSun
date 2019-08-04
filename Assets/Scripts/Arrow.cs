@@ -34,23 +34,6 @@ public class Arrow : MonoBehaviour
     {
         if (collision.collider.CompareTag("Ground"))
         {
-            //if (ReflexTimes > 0)
-            //{
-            //    Vector2 collisionPoint = collision.GetContact(0).point;
-            //    Vector2 posDiff = collisionPoint - new Vector2(transform.position.x, transform.position.y);
-            //    Vector2 collisionNormal = collision.GetContact(0).normal;
-            //    Vector2 reflectedVector = rb.velocity.normalized - 
-            //        2 * Vector2.Dot(rb.velocity.normalized, collisionNormal) * collisionNormal;
-            //    Vector2 reflectedVelocity = reflectedVector * rb.velocity.magnitude;
-            //    rb.velocity = reflectedVelocity;
-            //    transform.position = collisionPoint + reflectedVector * posDiff.magnitude;
-            //    Debug.DrawLine(transform.position, collisionPoint);
-            //    --ReflexTimes;
-            //}
-            //else if (shouldSimulateRotation)
-            //{
-            //    shouldSimulateRotation = false;
-            //}
 
             Vector2 collisionPoint = collision.GetContact(0).point;
             destroyArrow(collisionPoint);
@@ -63,5 +46,10 @@ public class Arrow : MonoBehaviour
         GameObject destroyEffect = Instantiate(ArrowDestroyParEff);
         destroyEffect.transform.position = partEffPos;
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        LevelManager.Instance.RemoveFlyingArrow();
     }
 }

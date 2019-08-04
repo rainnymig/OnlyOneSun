@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Sun : MonoBehaviour
 {
+    [SerializeField] private float heatLevelDrop = 0.5f;
 
     private Rigidbody2D rb;
 
@@ -18,6 +19,8 @@ public class Sun : MonoBehaviour
         if(collision.CompareTag("Arrow"))
         {
             rb.gravityScale = 1;
+            LevelManager.Instance.KillSun(gameObject);
+            LevelManager.Instance.AddHeatLevel(-heatLevelDrop);
         }
     }
 }
