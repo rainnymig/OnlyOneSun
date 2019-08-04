@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 public class LevelManager : Singleton<LevelManager>
 {
@@ -26,13 +27,19 @@ public class LevelManager : Singleton<LevelManager>
     [Range(0, 1)][SerializeField] private float initialHeatLevel = 0.5f;
     [SerializeField] private float fullHeatTime = 30;
 
+    [SerializeField] private TextMeshProUGUI winTextDisplay;
+    [SerializeField] private TextMeshProUGUI failTextDisplay;
+    [SerializeField] private GameObject winPanel;
+    [SerializeField] private GameObject failPanel;
+
     //  only check result when all arrows are settled
     private bool shouldCheckResult = true;
     private LevelState levelState = LevelState.RUNNING;
     private float arrowInTheAirCount = 0;
     private float heatMeter;
     private float heatTimer;
-
+    private string winText = "you made the world a better place";
+    private string failText;
 
     private UnityEvent onWinEvent;
     private UnityEvent onFailEvent;
@@ -169,11 +176,38 @@ public class LevelManager : Singleton<LevelManager>
     private void onWin()
     {
         Debug.Log("win!!!");
+        displayWinPanel();
     }
 
     private void onFail()
     {
         Debug.Log("fail!!!");
+        displayFailPanel();
+    }
+
+    private void displayWinPanel()
+    {
+        winTextDisplay.text = winText;
+        winPanel.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    private void hideWinPanel()
+    {
+        Time.timeScale = 1;
+        winPanel.SetActive(false);
+    }
+    private void displayFailPanel()
+    {
+        failTextDisplay.text = failText;
+        failPanel.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    private void hideFailPanel()
+    {
+        Time.timeScale = 1;
+        failPanel.SetActive(false);
     }
 
 }
