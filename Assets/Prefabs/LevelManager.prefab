@@ -52,6 +52,7 @@ MonoBehaviour:
   normalArrowCount: 3
   iceArrowCount: 0
   nextLevel: 
+  thisLevel: 
   initialHeatLevel: 0
   fullHeatTime: 30
   winTextDisplay: {fileID: 0}

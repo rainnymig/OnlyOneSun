@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class LevelManager : Singleton<LevelManager>
+public class LevelManager : MonoBehaviour
 {
 
     public enum LevelState

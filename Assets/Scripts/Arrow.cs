@@ -8,7 +8,7 @@ public class Arrow : MonoBehaviour
     public int ReflexTimes = 3;
     public float velocityThreshold = 0.1f;
     public GameObject ArrowDestroyParEff;
-
+    private LevelManager levelManager;
     private Rigidbody2D rb;
 
     private float angle;
@@ -17,6 +17,7 @@ public class Arrow : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        levelManager = FindObjectOfType<LevelManager>();
     }
 
     private void FixedUpdate()
@@ -50,6 +51,6 @@ public class Arrow : MonoBehaviour
 
     private void OnDestroy()
     {
-        LevelManager.Instance.RemoveFlyingArrow();
+        levelManager.RemoveFlyingArrow();
     }
 }

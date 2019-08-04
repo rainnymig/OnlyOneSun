@@ -12,12 +12,14 @@ public class Shooter : MonoBehaviour
     [SerializeField] private SpriteRenderer arrowSpriteRenderer;
     [SerializeField] private Sprite normalArrowSprite;
     [SerializeField] private Sprite iceArrowSprite;
+    private LevelManager levelManager;
 
 
     private LevelManager.ArrowType arrowType = LevelManager.ArrowType.normal;
 
     private void Start()
     {
+        levelManager = FindObjectOfType<LevelManager>();
         displayArrow();
     }
 
@@ -36,7 +38,7 @@ public class Shooter : MonoBehaviour
 
     private void ShootArrow()
     {
-        if(LevelManager.Instance.getArrowCount(arrowType) > 0)
+        if(levelManager.getArrowCount(arrowType) > 0)
         {
             GameObject arrowInstance;
             if(arrowType == LevelManager.ArrowType.normal)
@@ -53,7 +55,7 @@ public class Shooter : MonoBehaviour
             Rigidbody2D arrowRb = arrowInstance.GetComponent<Rigidbody2D>();
             arrowRb.AddForce(arrowInstance.transform.right * shootForce);
 
-            LevelManager.Instance.AddFlyingArrow(arrowType);
+            levelManager.AddFlyingArrow(arrowType);
 
             displayArrow();
         }
@@ -61,7 +63,7 @@ public class Shooter : MonoBehaviour
 
     private void displayArrow()
     {
-        if (LevelManager.Instance.getArrowCount(arrowType) > 0)
+        if (levelManager.getArrowCount(arrowType) > 0)
         {
             if(arrowType == LevelManager.ArrowType.normal)
             {
