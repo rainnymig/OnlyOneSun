@@ -583,6 +583,9 @@ MonoBehaviour:
     you must be quick! finish the task before the world is too hot.
 
 
+    press F to switch arrow type.
+
+
     pay attention to the environment. it can be an obstacle as well as help you.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 42c8987825fc4c04e9ee8760f167d8bf, type: 2}
@@ -799,7 +802,7 @@ PrefabInstance:
     - target: {fileID: 4045037073568591852, guid: 821edf32a2d4d214c9e906c347bff8db,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 502.3
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4045037073568591852, guid: 821edf32a2d4d214c9e906c347bff8db,
         type: 3}
@@ -2051,7 +2054,7 @@ PrefabInstance:
     - target: {fileID: 4045037073568591852, guid: 821edf32a2d4d214c9e906c347bff8db,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -518.9
+      value: -500
       objectReference: {fileID: 0}
     - target: {fileID: 4045037073568591852, guid: 821edf32a2d4d214c9e906c347bff8db,
         type: 3}
@@ -2251,7 +2254,7 @@ PrefabInstance:
     - target: {fileID: 4045037073568591852, guid: 821edf32a2d4d214c9e906c347bff8db,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 249
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 4045037073568591852, guid: 821edf32a2d4d214c9e906c347bff8db,
         type: 3}
@@ -2683,7 +2686,7 @@ PrefabInstance:
     - target: {fileID: 4045037073568591852, guid: 821edf32a2d4d214c9e906c347bff8db,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -247.2
+      value: -250
       objectReference: {fileID: 0}
     - target: {fileID: 4045037073568591852, guid: 821edf32a2d4d214c9e906c347bff8db,
         type: 3}

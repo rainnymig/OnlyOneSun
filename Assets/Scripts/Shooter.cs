@@ -16,10 +16,12 @@ public class Shooter : MonoBehaviour
 
 
     private LevelManager.ArrowType arrowType = LevelManager.ArrowType.normal;
+    private AudioSource audioSource;
 
     private void Start()
     {
         levelManager = FindObjectOfType<LevelManager>();
+        audioSource = GetComponent<AudioSource>();
         displayArrow();
     }
 
@@ -49,7 +51,7 @@ public class Shooter : MonoBehaviour
             {
                 arrowInstance = Instantiate(iceArrowPrefab);
             }
-
+            audioSource.Play();
             arrowInstance.transform.position = transform.position + transform.right * initialArrowOffset;
             arrowInstance.transform.rotation = transform.rotation;
             Rigidbody2D arrowRb = arrowInstance.GetComponent<Rigidbody2D>();

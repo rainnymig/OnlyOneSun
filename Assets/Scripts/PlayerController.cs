@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [Range(0, 0.3f)] [SerializeField] private float movementSmoothing = 0.05f;
     [SerializeField] private float moveSpeed = 40;
     [SerializeField] private GameObject bowWrapper;
+    private LevelManager levelManager;
 
     private Rigidbody2D rb;
     private float horizontalMove = 0;
@@ -16,6 +17,8 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        levelManager = FindObjectOfType<LevelManager>();
+
     }
 
     private void Update()
@@ -36,6 +39,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnDestroy()
     {
-        
+        levelManager.PlayerDie();
     }
 }

@@ -49,8 +49,7 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(thisLevel);
-
+        Time.timeScale = 1;
         if(onWinEvent == null)
         {
             onWinEvent = new UnityEvent();
@@ -77,6 +76,8 @@ public class LevelManager : MonoBehaviour
         heatMeter = Mathf.Clamp(heatTimer / fullHeatTime, 0, 1);
         if(heatMeter == 1)
         {
+            SetHeatLevel(0);
+            levelState = LevelState.FAILED;
             failText = "it is too late. the world burns.";
             onFailEvent.Invoke();
         }
